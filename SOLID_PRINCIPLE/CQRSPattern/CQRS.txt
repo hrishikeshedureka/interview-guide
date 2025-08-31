@@ -1,0 +1,21 @@
+﻿****What is CQRS?****
+	CQRS stands for Command Query Responsibility Segregation — a software design pattern 
+	that separates the responsibilities of reading data (queries) and modifying data (commands) into distinct models or components.
+
+****Why Use CQRS?
+	Performance Optimization: Read and write operations often have different performance needs. CQRS lets you optimize each independently.
+	Scalability: You can scale read-heavy and write-heavy parts of your system separately.
+	Security: Separating commands and queries can help enforce stricter access controls.
+	Complex Domains: In systems with complex business logic, CQRS helps simplify the model by splitting responsibilities
+
+****How It Works
+	Commands: These are operations that change state — like “CreateOrder” or “UpdateProfile.” They don’t return data.
+	Queries: These retrieve data and never modify it.
+	Command Handlers: Process commands and may trigger events.
+	Query Handlers: Fetch data, often from optimized read models or databases.
+
+****When to Use It
+	CQRS shines in systems that:
+	Have high load or complex business rules
+	Require event sourcing
+	Need real-time updates or audit trails

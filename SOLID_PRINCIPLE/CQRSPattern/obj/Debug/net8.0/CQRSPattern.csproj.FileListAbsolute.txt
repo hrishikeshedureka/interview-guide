@@ -1,0 +1,15 @@
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\bin\Debug\net8.0\CQRSPattern.exe
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\bin\Debug\net8.0\CQRSPattern.deps.json
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\bin\Debug\net8.0\CQRSPattern.runtimeconfig.json
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\bin\Debug\net8.0\CQRSPattern.dll
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\bin\Debug\net8.0\CQRSPattern.pdb
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\CQRSPattern.GeneratedMSBuildEditorConfig.editorconfig
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\CQRSPattern.AssemblyInfoInputs.cache
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\CQRSPattern.AssemblyInfo.cs
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\CQRSPattern.csproj.CoreCompileInputs.cache
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\CQRSPattern.sourcelink.json
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\CQRSPattern.dll
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\refint\CQRSPattern.dll
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\CQRSPattern.pdb
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\CQRSPattern.genruntimeconfig.cache
+D:\HRISHI\_WA\Interview-guide\SOLID_PRINCIPLE\CQRSPattern\obj\Debug\net8.0\ref\CQRSPattern.dll

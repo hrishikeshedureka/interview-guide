@@ -19,7 +19,7 @@ namespace CQRSPattern.Command
 
         public void Handle(CreateEmployeeCommand command)
         {
-            var employee = new Employee { Name = command.Name };
+            var employee = new Employee { FirstName = command.Name };
             _repo.Save(employee);
         }
     }
