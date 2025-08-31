@@ -19,3 +19,7 @@
 	Have high load or complex business rules
 	Require event sourcing
 	Need real-time updates or audit trails
+
+****When Not to Use It
+	CQRS can add complexity, so it’s not ideal for simple applications or those with low traffic.
+	It may not be necessary if the read and write operations are similar or if the system is small.
