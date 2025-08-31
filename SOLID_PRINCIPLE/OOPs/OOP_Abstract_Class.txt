@@ -1,0 +1,283 @@
+﻿****What is an Abstract Class?***
+        An abstarct class is an class that "cannot be instantiated directly". 
+        It's used when we want to to define a common base with "shared functionlity" & "enforce certain behaviors" in derived classes.
+        1. Declared using "abstract" keyword 
+        2. Can contains abstract methods(without body) and concrete methods (with body).
+        3. Must be inherated by another calss to be used.
+        4. Helps achieve partial abstraction - unlike interfaces, which are fully abstract.
+           
+    public abstract class Vehicle
+    {
+        public abstract void Start(); // Abstract method
+        public void FuelUp() => Console.WriteLine("Fueling up...");     // Non Abstract method
+    }
+
+    public class Car : Vehicle
+    {
+        public override void Start() => Console.WriteLine("Car started!");
+    }
+
+        An abstract method is a method that's declared in an abstarct class but doesn't have any implementation (body). 
+        It must be inside an abstract class and can't have a method body 
+        It must be overriden in derived classes using override keyword.
+
+
+
+****When to use Abstract Classes in C#?****
+        When we want to define a common bease for a grouop of related classes, but we don't want that base class to be instantiated on its own. We can think this as template that enforces a contract while allowing shared functionality.
+            1. to provide default behavior
+            2. to enforce a contract
+            3. to define base properties or fields
+            4. to prevent direct instantiation
+            5. when we expect future expansion
+               
+    public abstract class Animal
+    {
+        public abstract void Speak(); // must be implemented
+        public void Eat() => Console.WriteLine("Eating...");
+    }
+
+    public class Dog : Animal
+    {
+        public override void Speak() => Console.WriteLine("Woof!");
+    }
+
+               
+           
+****Can you create an instance of an abstract class?**** 
+        No, as abstract class is not fully implemented class in which abstract methods are not implemented.
+           
+****What is a Sealed Class?****
+        A sealed class is a class that cannot be inherited. Once a class is marked as sealed, no other class can derive from it. This is usefull when we want to prevent further modification or extension of a class's behavior.
+
+****When we should use "sealed class"**** 
+        Security    => prevents other developers from overriding sensitive logic
+        Performance => The runtime can optimize calls to sealed classes since it knows they won't change.
+        Design Intent => Clearly communicates that the class is complete and not meant to be extended.
+               
+    public sealed class Logger
+    {
+        public void Log(string message)
+        {
+            Console.WriteLine($"Log: {message}");
+        }
+    }
+
+    // This would cause a compile-time error:
+    public class CustomLogger : Logger 
+    { 
+    
+    }
+
+    We can also sealed individual methods in a derived class to prevent further overriding.
+    public class Base
+    {
+        public virtual void Display() => Console.WriteLine("Base Display");
+    }
+
+    public class Derived : Base
+    {
+        public sealed override void Display() => Console.WriteLine("Derived Display");
+    }
+       
+****When to use the abstract method?****
+        We should use abstract method when we want to define a method signature in a base class but leave the actual implementation to the derived classes. 
+        Its like saying "Every subclass must do this, but I'm not going to tell you how."
+       
+    public abstract class Document
+    {
+        public abstract void Print(); // No implementation here
+    }
+       
+    public class PDFDocument : Document
+    {
+        public override void Print()    => console.WriteLine("Printing PDF Document");   
+    }
+       
+    public class ReportDocument : Document
+    {
+        public override void Print() => console.WriteLine("Printing Report Document");
+    }
+  
+****Can a sealed class be used as a base class?****
+        No. a sealed class in c# cannot be used as a base class. That;s the whole point of sealing it.
+        When we mark a class as "sealed" we are telling the complier and other developers that "this class is complete and no one should inherit from it.
+       
+    sealed class FinalForm {}
+       
+    class SubForm : FinalForm {} // this will cause a compile-time error because FinalForm is sealed and cannot be inherited.
+       
+       
+       
+****Can an abstract class have a constructor? If so what is the use?
+        Yes, an abstract class in C# can have a constructor and it often should. 
+        Even though we can't instantiate an abstract class directly, its contructor is still called when a derived class is instantiated. 
+        This is part of what's known as "constructor chaining".
+
+****We cannot create an instance of an abstract class. So, what is the use of a constructor in an abstract class?
+        Initialization of Common State 
+            The constructor in an abstract class allows you to initialize shared fields or properties that all derived classes will inherit.
+        Constructor Chaining 
+            When a derived class is instantiated, it automatically calls the base class constructor—even if that base class is abstract. 
+            This ensures proper setup of the base class part of the object.
+        Enforcing Initialization Logic 
+            You can enforce certain initialization logic that must run before the derived class constructor executes.
+
+****An abstract method in an abstract class does not have any implementation, so what is the use of calling it from the abstract class constructor?
+        Actully we should not do this scenario.
+        It is dangerous to call an abstract method from the constructor of an abstract class because the derived class's implementation may not be ready yet.
+       
+****When should a class be declared as abstract?
+        A class should be declared abstract it meant to serve as a foundation for other classess but not be instantiated on its own. 
+        Think of it as a blueprint: it defines a structure and behavior that derived classes must follow or build upon.
+       
+****What is the difference between the private and sealed method?
+        Use private => to hide 
+        Use sealed => to finalize
+
+****When should a method be declared as sealed?
+        A method should be declared as sealed when we want to prevent it from overriden in derived classes.
+    public classs BaseClass
+    {
+        public virtual DisplayBaseClassMathod()
+        {
+            Console.WriteLine("Base Class Method");
+        }
+    }
+       
+    public class ChildClass : BaseClass
+    {
+        public sealed override DisplayBaseClassMathod()
+        {
+            Console.WriteLine("Sealed method in child class method");
+        }
+    }
+
+****When should a class be declared as sealed?
+        A sealed class should be used when we want to prevent any further inheritance from that class. This ensures that no other class can derive from it.
+    public sealed class FinalClass
+    {
+        public void Display()
+        {
+            Console.WriteLine("This is a sealed class method.");
+        }
+    }
+
+    // This will cause a compile-time error:
+    public class DerivedClass : FinalClass 
+    { 
+    
+    } // Cannot derive from sealed class 'FinalClass'
+
+
+****What are the differences between an abstract class and a sealed class?
+        Use abstract classes when designing a common base for multiple related classes.
+        Use sealed classes when ensuring no modifications or inheritance.
+       
+****Why should the method have an abstract keyword if it does not have the body?
+        Abstract keyword ensures that any child class must provide an implementation for that method to make it consistency.
+       
+****What are the characteristics of an abstract class?
+        Can not be instantiated
+        Can contain Abstract methods
+        Can have non-Abstract methods
+        Support Inheritance
+        Provides partial implementation
+        Can contain fields and properties
+        Can have constructors but they are called from derived classes only.
+        Cannot be sealed
+  
+****Why can the abstract class not be instantiated?
+        An abstarct class cannot be instantiated because it is designed to serve as a blueprint for other classes rather than a fully usable object.
+        Abstract method requires implementation
+        Conceptual Design for inheriatnce
+        Enforcing for class hireachy
+        Can contains concrete methods
+       
+  
+****Who will provide the implementation (body) for abstract methods?
+        Derived classes must provide the implementation for abstract methods.
+        The overriden method in the derived class must match the signature of the abstract method in the base class.
+       
+****What type of members can we define in an abstract class?
+               
+  
+****Will abstract class members are created when a subclass object is created?
+        Yes, when a subclass object is created, the members of the abstract class are created as well. 
+        The abstract class serves as a base, and its members (both abstract and concrete) are inherited by the subclass.
+
+****How can we execute static and non-static concrete members of the abstract class?
+    1. Executing Static Members
+        Static methods and properties belong to the class itself, not to an instance. They can be called directly using the class name.
+           
+        public abstract class Animal
+        {
+            public static void ShowInfo()
+            {
+                Console.WriteLine("Animals exist in nature.");
+            }
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                Animal.ShowInfo(); // ✔ Direct call without an instance
+            }
+        }
+    2. Executing Non-Static (Instance) Members
+        Non-static members require an instance of a derived class. Since an abstract class cannot be instantiated directly, a subclass must be created.
+            
+        public abstract class Animal
+        {
+            public void Eat()
+            {
+                Console.WriteLine("Eating food...");
+            }
+        }
+
+        public class Dog : Animal 
+        { 
+            // No override needed for concrete methods
+        } 
+
+        class Program
+        {
+            static void Main()
+            {
+                Dog myDog = new Dog();  // ✔ Create an instance of a subclass
+                myDog.Eat();            // ✔ Call the concrete method
+            }
+        }
+
+
+****Can we declare the abstract method as static?
+        No, an abstract method cannot be declared as static because abstract methods intended to be overriden in derived classes while static method belongs to a class itself and
+        cannot be overriden.
+
+****Can we declare the concrete class as abstract?
+        No, a concrete class cannot be declared as abstract because concrete classes are meant to be fully implemented and instantiated, 
+        while abstract classes serve as templates for inheritance and cannot be instantiated.
+  
+****Explain the differences between overriding methods and abstract methods?
+        Overriding methods and abstract methods both involve modifying behavior in derived classes, but they serve different purposes. Here’s how they compare:
+        1. Definition
+            Overriding Method: A method in a subclass that replaces an inherited method from a base class.
+            Abstract Method: A method declared but not implemented in an abstract class, which must be implemented by derived classes.
+        2. Implementation
+            Overriding Method: Already has an implementation in the base class, but can be modified in the derived class.
+            Abstract Method: Has no implementation in the base class—only the derived class must provide the body.
+        3. Base Class Requirements
+            Overriding Method: The base method must be virtual or abstract to allow overriding.
+            Abstract Method: Must be defined in an abstract class, requiring subclasses to implement it.
+        4. Behavior in Derived Classes
+            Overriding Method: Subclasses may choose to override or keep the inherited method.
+            Abstract Method: Subclasses must override and provide an implementation.
+
+****What is the need for abstract classes in application development?
+        Abstract classes are essential in application development for several reasons:
+            1. Code Reusability: They allow developers to define common functionality that can be reused across multiple derived classes, reducing code duplication.
+            2. Enforcing Contracts: Abstract classes enforce a contract for derived classes, ensuring they implement specific methods or properties.
+            3. Partial Implementation: They provide a way to implement some methods while leaving others abstract, allowing flexibility in design.
+            4. Design Clarity: Abstract classes help clarify the intended use of a class hierarchy, making it easier to understand relationships and behaviors.
+            5. Future Expansion: They allow for easy extension of functionality by adding new derived classes without modifying existing code.

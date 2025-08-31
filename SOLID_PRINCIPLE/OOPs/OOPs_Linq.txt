@@ -1,0 +1,92 @@
+﻿****Define LINQ? Why is it important?
+	The complete form of “LINQ” is Language Integrated Query. LINQ provides simple data access from in-memory databases, objects, XML documents, etc.
+
+****What are the different types of LINQ?
+	There are several types of LINQ, including:
+	1. LINQ to Objects: Queries against in-memory collections.
+	2. LINQ to SQL: Queries against SQL databases.
+	3. LINQ to XML: Queries against XML documents.
+	4. LINQ to Entities: Queries against Entity Framework models.
+	5. LINQ to DataSet: Queries against ADO.NET DataSets.
+
+****Define the “Let” clause and “Where” clause?
+	“Let” Clause: enables us to define the variable and assign it to the value calculated from data values.
+	“Where” Clause: It enables us to add some conditional filters to the query.
+
+****how LINQ is more important than Stored Procedures?
+	Deployment: For the Stored Procedures, we must give further scripting,  yet with the LINQ, everything will be compiled into one DLL, thus making deployment easy.
+	Debugging: It is not easy to debug the stored procedure, yet as LINQ is part of .NET, we can use visual studios debugger for debugging the queries.
+	Type Safety: LINQ is type-safe; therefore, query errors are type-checked at compilation time.
+
+****LINQ to SQL?
+	LINQ to SQL is part of ADO.NET programming. It handles the relational data as an object. 
+	LINQ to SQL transforms the language integrated query in an object to the SQL and dispatch them to the database for implementation. 
+	When database responses, the result of LINQ to SQL converts them back to the objects. 
+	LINQ to SQL endorses user-specified stored procedures and functions in the database.
+
+****What is LINQ Lambda Expression
+	Lambda Expression is the function with no name. Lambda Expression makes the syntax more extensive by making it more precise and short. 
+	It is equally essential as LINQ Query even though it is not readable like LINQ Query. 
+	The scope of the Lambda Expression is restricted. We cannot reuse it.
+
+****Difference is between FirstOrDefault() and First() selector methods in the LINQ
+	The first() method always anticipates a minimum of one element in the result set. If there is not an element in the result, First() returns the *******exception********.
+	FirstOrDefault() is compatible with the result set containing 0 elements. It will *********not throw******** any exception.
+
+	List<int> numbers = new List<int> { 10, 20, 30 };
+
+	// First() — throws if no match
+	int result1 = numbers.First(n => n > 15);     // ✅ Returns 20
+	int result2 = numbers.First(n => n > 100);    // ❌ Throws InvalidOperationException
+
+	// FirstOrDefault() — returns default if no match
+	int result3 = numbers.FirstOrDefault(n => n > 15);  // ✅ Returns 20
+	int result4 = numbers.FirstOrDefault(n => n > 100); // ✅ Returns 0 (default for int)
+
+
+	List<int> numbers = new List<int> { 1, 2, 3 };
+	// Single() — throws if not exactly one match
+	int result1 = numbers.Single(n => n == 2); // ✅ OK
+	int result2 = numbers.Single(n => n > 5);  // ❌ Throws: no match
+
+	// SingleOrDefault() — returns default if no match
+	int result3 = numbers.SingleOrDefault(n => n == 2); // ✅ OK
+	int result4 = numbers.SingleOrDefault(n => n > 5);  // ✅ Returns 0 (default for int)
+
+
+****Why the SELECT clause comes after FROM clause in the LINQ?
+	LINQ needs all the queries to be defined first. 
+	The “FROM” clause of the LINQ query specifies the range or condition for selecting the records. 
+	Thus, the “FROM” clause should act before “SELECT” in the LINQ query.
+
+****What is the difference between “Select” and “SelectMany” in LINQ?
+	“Select” is used to project each element of a sequence into a new form. It transforms each element of the collection.
+	“SelectMany” is used to project each element of a sequence to an IEnumerable<T> and flattens the resulting sequences into one sequence. It is useful for working with collections of collections.
+
+Take(1) vs First() in LINQ
+var numbers = new List<int> { 10, 20, 30 };
+
+// First() — returns the first item directly
+int firstNumber = numbers.First(); // 10
+
+// Take(1) — returns a sequence with one item
+var firstSequence = numbers.Take(1); // IEnumerable<int> with one item
+
+// To access the item from Take(1)
+int firstFromTake = firstSequence.First(); // Now you get the item  // 10
+
+List<string> names = new List<string> { "Alice", "Bob", "Charlie" };
+
+// Using Take(1)
+var firstNameEnumerable = names.Take(1);
+foreach (var name in firstNameEnumerable)
+{
+    Console.WriteLine(name); // Outputs: Alice
+}
+
+// Using First()
+string firstName = names.First(); // Outputs: Alice
+
+
+	
+	

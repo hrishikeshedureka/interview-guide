@@ -1,0 +1,28 @@
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.exe
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.deps.json
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.runtimeconfig.json
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.pdb
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.AssemblyInfoInputs.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.AssemblyInfo.cs
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.csproj.CoreCompileInputs.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\refint\ISP.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.pdb
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.genruntimeconfig.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ref\ISP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.exe
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.deps.json
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.runtimeconfig.json
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\bin\Debug\net8.0\ISP.pdb
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.GeneratedMSBuildEditorConfig.editorconfig
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.AssemblyInfoInputs.cache
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.AssemblyInfo.cs
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.csproj.CoreCompileInputs.cache
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\refint\ISP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.pdb
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ISP.genruntimeconfig.cache
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\ISP\obj\Debug\net8.0\ref\ISP.dll

@@ -1,0 +1,99 @@
+﻿Difference between Ref and Out parameters in C#?
+****Ref
+	Purpose: Passes a variable by reference, allowing the method to read and modify the original value.
+	Requirement: The variable must be initialized before being passed.
+	Use Case: When you want the method to potentially change the value and also use the original value.
+
+	int myNum = 5;						 // must be initialized
+	UpdateValue(ref myNum);		
+	Console.WriteLine(myNum);			 // Output: 15
+
+	void UpdateValue(ref int number) {
+		number += 10;					// Modifies the original value
+	}
+
+****Out
+	Purpose: Also passes a variable by reference, but it's meant for output only.
+	Requirement: The variable does not need to be initialized before being passed.
+	Use Case: When a method needs to return multiple values or produce a result.
+
+	int a, b;				  // does not need to be initialized
+	GetValues(out a, out b);  // a = 10, b = 20
+
+	void GetValues(out int x, out int y) {
+		x = 10;
+		y = 20;
+	}
+
+****Key Difference
+		Feature								ref										out
+		Initialization						Must be initialized before use			Can be uninitialized
+		Purpose								Input and output						Output only
+		Flexibility							More flexible							More restrictive
+		Common Use							Modify existing value					Return multiple values
+
+Difference betwween Const and Readonly in C#?
+****Const
+	Purpose: Used to declare a constant value that cannot be changed after compilation.
+	Initialization: Must be initialized at the time of declaration.
+	Scope: Can be used in static and instance contexts, but the value is fixed at compile time.
+	Use Case: When you need a constant value that is known at compile time.
+	const int MaxValue = 100; // Must be initialized here
+
+****Readonly
+Purpose: Used to declare a field that can only be assigned a value at declaration or in the constructor.
+Initialization: Can be initialized at declaration or in the constructor, allowing for dynamic values.
+Scope: Can be used in instance and static contexts, but the value can be set at runtime.
+Use Case: When you need a value that can be set at runtime but should not change after initialization.
+readonly int MaxValue; // Can be initialized in constructor
+
+For Example:
+public class AppSettings
+{
+    public const string AppName = "MyCoolApp";		  // Compile-time constant
+    public readonly DateTime LaunchDate;			 // Runtime constant
+
+    public AppSettings()
+    {
+        LaunchDate = DateTime.Now;					// Allowed for readonly field and will assign inside the constructor
+    }
+
+		//AppName is a const—its value is fixed at compile time and shared across all instances.
+		//LaunchDate is readonly—it’s set when the object is created and cannot be changed afterward.
+}
+
+
+Bonus Tip for Interviews =>	If asked why not just use const everywhere, you can say:
+	"const is great for universal constants like Pi or max limits" 
+	"readonly shines when values depend on runtime logic—like timestamps, configuration from a file, or constructor parameters."
+
+
+****Difference between Var and Dynamic in C#?
+Var
+		Purpose: Used for implicit typing, where the type is determined at compile time.
+		Initialization: Must be initialized at the point of declaration.
+		Scope: The type is fixed after initialization and cannot change.
+		Use Case: When you want to let the compiler infer the type, making code cleaner and more readable.
+
+		var number = 10;         // Inferred as int
+		var name = "Copilot";    // Inferred as string
+		number = "hello";        // ❌ Compile-time error: cannot assign string to int
+
+
+
+Dynamic
+		Purpose: Used for dynamic typing, where the type is determined at runtime.
+		Initialization: Can be initialized without a specific type, allowing for flexibility.
+		Scope: The type can change at runtime, allowing for more dynamic behavior.
+		Use Case: When you need to work with types that are not known until runtime, such as when interacting with COM objects or dynamic data sources.
+
+		dynamic value = 10;
+		value = "hello";					// ✅ Allowed
+		Console.WriteLine(value.Length);	// ✅ Works if value is string
+
+		value = 123;
+		Console.WriteLine(value.Length);	// ❌ Runtime error: int has no Length
+
+If asked when to use each, say:
+"var is ideal when the type is known and helps keep code clean without sacrificing type safety.
+"dynamic is powerful but risky—best used when dealing with unknown or flexible data structures, like deserialized JSON or COM objects."

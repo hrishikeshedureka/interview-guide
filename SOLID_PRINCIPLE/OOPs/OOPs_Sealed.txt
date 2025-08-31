@@ -1,0 +1,64 @@
+﻿****What Is a Sealed Class
+    A sealed class is a class that cannot be inherited. You declare it using the sealed keyword:
+    
+    public sealed class Logger {
+        public void Log(string message) {
+            Console.WriteLine("Log: " + message);
+        }
+    }
+
+    public class CustomLogger : Logger { } // This will cause a compile-time error
+
+****Why Use Sealed Classes?
+    1. Prevent Inheritance
+            Protects your class from being extended or modified through subclassing.
+            Useful in security-critical or domain-specific logic.
+    2. Performance Optimization
+            The .NET runtime can make method calls faster because it knows the class won’t be overridden.
+    3. Documentation of Intent
+            Signals to other developers: “This class is complete. Don’t extend it.”
+    4. Security and Stability
+            Prevents unintended behavior changes in third-party or internal libraries
+
+****Sealed Methods
+    We can also seal methods in a derived class to prevent further overriding:
+
+    class Printer {
+        public virtual void Print() {
+            Console.WriteLine("Printing...");
+        }
+    }
+
+    class LaserPrinter : Printer {
+        public sealed override void Print() {           //making the method sealed
+            Console.WriteLine("Laser printing...");
+        }
+    }
+
+    // This will cause an error:
+    // class OfficePrinter : LaserPrinter {
+    //     public override void Print() { }         //while override is allowed, sealed prevents further overriding
+    // }
+
+
+****When should a class be declared as sealed?
+        A sealed class should be used when we want to prevent any further inheritance from that class. This ensures that no other class can derive from it.
+    public sealed class FinalClass
+    {
+        public void Display()
+        {
+            Console.WriteLine("This is a sealed class method.");
+        }
+    }
+
+    // This will cause a compile-time error:
+    public class DerivedClass : FinalClass 
+    { 
+    
+    } // Cannot derive from sealed class 'FinalClass'
+
+
+****What are the differences between an abstract class and a sealed class?
+        Use abstract classes when designing a common base for multiple related classes.
+        Use sealed classes when ensuring no modifications or inheritance.
+

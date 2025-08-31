@@ -1,0 +1,165 @@
+﻿****What is Garbage Collection?
+	When a program starts, the system allocates some memory for the program to get executed.
+	When a C# program instantiates a class, it creates an object.
+	The program manipulates the object, and at some point the object may no longer be needed.
+	When the object is no longer accessible to the program and becomes a candidate for garbage collection.
+	There are two places in memory where the CLR stores items while your code executes.
+			stack and heap
+	The stack keeps track of what’s executing in your code (like your local variables), and the heap keeps track of your objects.
+	Value types can be stored on both the stack and the heap.
+	For an object on the heap, there is always a reference on the stack that points to it.
+	The garbage collector starts cleaning up only when there is not enough room on the heap to construct a new object
+	The stack is automatically cleared at the end of a method. The CLR takes care of this and you don’t have to worry about it.
+	****************The heap is managed by the garbage collector.****************
+	In unmanaged environments without a garbage collector, 
+	you have to keep track of which objects were allocated on the heap and you need to free them explicitly. 
+	In the .NET Framework, this is done by the *********************garbage collector*********************
+
+****What are strong references and weak references in GC?
+	The garbage collector cannot collect an object in use by an application while the application’s code can reach that object. 
+	The application is said to have a strong reference to the object.
+	
+	A weak reference permits the garbage collector to collect the object while still allowing the application to access the object. 
+	A weak reference is valid only during the indeterminate amount of time until the object is collected when no strong references exist. 
+	When you use a weak reference, the application can still obtain a strong reference to the object, which prevents it from being collected. 
+	However, there is always the risk that the garbage collector will get to the object first before a strong reference is re-established.
+	
+	Weak references are useful for objects that use a lot of memory, but can be recreated easily if they are reclaimed by garbage collection.
+
+****How GC come to know that object is ready to get collected?
+	GC normally collects objects when the object is not reachable i.e. not in reference.
+	The garbage collector uses the following information to determine whether objects are live:
+		Stack roots : Stack variables provided by the just-in-time (JIT) compiler and stack walker.
+		Garbage collection handles :  Handles that point to managed objects and that can be allocated by user code or by the common language runtime.
+		Static data :  Static objects in application domains that could be referencing other objects. 
+					   Each application domain keeps track of its static objects.
+
+****What are generations in GC?
+		After the garbage collector is initialized by the CLR, it allocates a segment of memory to store and manage objects.
+		This memory is called the managed heap, as opposed to a native heap in the operating system.
+		There is a managed heap for each managed process. All threads in the process allocate memory for objects on the same heap.
+	
+		The heap is organized into generations so it can handle "long-lived" and "short-lived" objects. 
+		Garbage collection primarily occurs with the reclamation of short-lived objects that typically occupy only a small part of the heap. 
+		
+************There are three generations of objects on the heap:*********
+Generation 0. This is the youngest generation and contains short-lived objects. 
+			  An example of a short-lived object is a temporary variable. Garbage collection occurs most frequently in this generation.
+			  Newly allocated objects form a new generation of objects and are implicitly generation 0 collections, 
+			  unless they are large objects, in which case they go on the large object heap in a generation 2 collection.
+			  Most objects are reclaimed for garbage collection in generation 0 and do not survive to the next generation.
+Generation 1. This generation contains short-lived objects and serves as a buffer between short-lived objects and long-lived objects.
+Generation 2. This generation contains long-lived objects. An example of a long-lived object is an object in a server application that contains static data that is live for the duration of the process.
+	
+Garbage collections occur on specific generations as conditions warrant. Collecting a generation means collecting objects in that generation and all its younger generations. 
+A generation 2 garbage collection is also known as a "full garbage collection", 
+because it reclaims all objects in all generations (that is, all objects in the managed heap).
+	Generation 0 – Short-lived Objects
+	Generation 1- As a buffer between short lived and long lived objects
+	Generation 2 – Long lived objects
+
+****How value types get collected v/s reference types?
+	Value types are gets stored on the stack and therefore it gets removed from the stack by its pop method when application is done with its use.
+	Reference types get stored on heap so gets collected by garbage collector.
+
+****Dispose v/s Finalize
+				Dispose																Finalize
+1. It is used to free unmanaged resources at any time.				1. It can be used to free unmanaged resources held by an object 
+																	   before that object is destroyed.
+2. It is called by user code and the class							2. It is called by Garbage Collector and cannot be called by user code.
+   which is implementing dispose method, 
+   must has to implement IDisposable interface.	
+3. It is implemented by implementing								3. It is implemented with the help of Destructors
+   IDisposable interface Dispose() method.	
+4. There is no performance costs associated with Dispose method.	4. There is performance costs associated with Finalize method 
+																		since it doesn’t clean the memory immediately and called by GC automatically.
+
+
+****How to manage Unmanaged resources?
+	Garbage collector will be taking care of managed resources.But when you will deal with Unmanaged resources like network connection, 
+	file handle, window handle etc.. You have to explicitly release those items. 
+	If not, you will get errors such as “This File is in use” or you won’t be able to connect to your database because all connections are in use.
+	To handle unmanaged resources, C# supports the concept of finalization. 
+	This mechanism allows a type to clean up prior to garbage collection.
+		But in C#, you can’t be sure when a finalizer is called.
+		It will happen only when the garbage collector determines that your object is ready for being cleaned up.
+		A finalizer in C# requires some special syntax, just as a constructor. 
+		You need to prefix the class name with a tilde (~) to create a finalizer.
+
+****Does GC work similar for Web Application and windows application? Is there any difference?
+	GC works in “Workstation Mode” for windows application , which can be can be concurrent or non-concurrent. 
+	Concurrent garbage collection enables managed threads to continue operations during a garbage collection.
+	Starting with the .NET Framework 4, background garbage collection replaces concurrent garbage collection.
+	And For Web application it works in “Server garbage collection” mode, which is intended for server applications that need high 
+	throughput and scalability. Server garbage collection can be non-concurrent or background.
+
+****How to Force Garbage Collection?
+	You can force this by adding a call to GC.Collect.
+		Example
+			StreamWriter stream = File.CreateText(“temp.dat”);
+			stream.Write(“some test data”);
+			GC.Collect();
+			GC.WaitForPendingFinalizers();
+			File.Delete(“temp.dat”);
+
+****Why does Garbage Collection only sweep the heap?
+	The garbage collector does scan the stack — to see what things in the heap are currently being used (pointed to) by things on the stack.
+	It makes no sense for the garbage collector to consider collecting stack memory because the stack is not managed that way: 
+	Everything on the stack is considered to be “in use.” And memory used by the stack is automatically reclaimed when you return from method calls. 
+	Memory management of stack space is so simple, cheap and easy that you wouldn’t want garbage collection to be involved.
+ 
+ ****Can we pin objects for later references?
+	The CLR allows us to “pin” an object so that it is not moved during garbage collection. 
+	This can potentially have some big consequences for garbage collection, though; 
+	the heap is still fragmented if an object is pinned during a pass. 
+	What’s more is that if the object becomes eligible for compaction after the pass, 
+	it’s still considered a gen-0 object even though it should have moved to gen-1. 
+	C# enables us to pin an object via the fixed statement.
+		The fixed statement prevents the garbage collector from relocating a movable variable. 
+		The fixed statement is only permitted in an unsafe context.
+ 
+ ****Dispose Method:
+		C# defines the IDisposable interface, which declares the Dispose method.
+		If a class implements this interface, then the using statement will automatically call an object’s Dispose method, 
+		so you don’t need to do it explicitly.
+
+	    If the Dispose method has freed all object’s resources then no need to invoke destructor.
+		Dispose method can call "GC.SuppressFinalize" to tell the Garbage Collector to skip Object’s Destructor.
+
+	Let’s look at be low example to see the implementation of Dispose method in C#.
+
+public class MyWrappedResource : IDisposable
+{
+    //our managed resource
+    IDbConnection _conn = null;
+    public MyWrappedResource(string filename)
+    {
+    }
+    public void Close()
+    {
+        Dispose(true);
+    }
+    public void Dispose()
+    {
+        Dispose(true);
+    }
+    private bool _disposed = false;
+    protected void Dispose(bool disposing)
+    {
+        //in a class hierarchy, don’t forget to call the base class!
+        //base.Dispose(disposing);
+        if (!_disposed)
+        {
+            _disposed = true;
+            if (disposing)
+            {
+                //cleanup managed resources
+                if (_conn != null)
+                {
+                    _conn.Dispose();
+                }
+            }
+            //cleanup unmanaged resources here, if any
+        }
+    }
+}

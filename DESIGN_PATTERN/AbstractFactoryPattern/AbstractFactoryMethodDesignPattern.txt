@@ -1,0 +1,18 @@
+﻿**Abstract Factory Method Design Pattern**
+	The Abstract Factory Pattern is a creational design pattern that lets you produce families of related objects without specifying 
+	their concrete classes. 
+	Think of it as a super factory—a factory of factories—that helps you maintain consistency across products that are meant to work together.
+
+**Key Concepts**
+	Component				Role
+	AbstractFactory			Declares methods for creating abstract products
+	ConcreteFactory			Implements creation methods for specific product variants
+	AbstractProduct			Defines interfaces for product types
+	ConcreteProduct			Implements the abstract product interfaces
+	Client					Uses the abstract factory and products without knowing their concrete types
+
+**Benefits**
+	Ensures consistency among related objects
+	Promotes loose coupling
+	Makes it easy to switch families of products
+	Supports Open/Closed Principle

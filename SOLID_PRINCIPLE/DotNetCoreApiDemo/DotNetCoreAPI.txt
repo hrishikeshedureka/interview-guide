@@ -1,0 +1,408 @@
+﻿https://www.wecreateproblems.com/interview-questions/dot-net-core-interview-questions
+https://www.scholarhat.com/tutorial/net/dotnet-core-interview-questions
+https://dotnettutorials.net/lesson/asp-net-core-experienced-interview-questions-and-answers/
+
+// dot net core interview questions and answers
+1. What is .NET Core?
+.NET Core is a free, open-source, cross-platform framework developed by Microsoft for building modern applications. It supports multiple operating systems, including Windows, macOS, and Linux.
+2. What are the main features of .NET Core?
+- Cross-platform support
+- High performance
+- Modular architecture
+- Command-line interface (CLI)
+- Side-by-side versioning
+- Built-in dependency injection
+- Support for microservices and containers
+3. What is the difference between .NET Framework and .NET Core?
+- .NET Framework is Windows-only, while .NET Core is cross-platform.
+- .NET Core is modular and lightweight, whereas .NET Framework is monolithic.
+- .NET Core supports side-by-side versioning, allowing multiple versions to coexist on the same machine.
+- .NET Core has a command-line interface (CLI) for development, while .NET Framework relies on Visual Studio.
+4. What is the Common Language Runtime (CLR)?
+CLR is the runtime environment in .NET that manages the execution of .NET programs. It provides services like memory management, security, and exception handling.
+5. What is the difference between a .NET Core application and a .NET Core library?
+- A .NET Core application is an executable program that can be run, while a .NET Core library is a reusable component that can be referenced by other applications.
+- Applications have an entry point (Main method), whereas libraries do not.
+6. What is the purpose of the project.json file in .NET Core?
+Project.json was used in early versions of .NET Core to manage project dependencies and configurations. However, it has been replaced by the .csproj file in later versions.
+7. How do you manage dependencies in .NET Core?
+Dependencies in .NET Core are managed using NuGet, a package manager that allows you to add, update, and remove libraries and tools in your project.
+8. What is the role of the Startup.cs file in a .NET Core application?
+Startup.cs is a configuration file that defines the application's request pipeline and services. It contains methods like ConfigureServices and Configure to set up dependency injection and middleware.
+9. What is middleware in .NET Core?
+Middleware is software that sits between the request and response in a .NET Core application. It processes requests, performs actions, and can modify the response before it is sent back to the client.
+10. How do you implement dependency injection in .NET Core?
+Dependency injection is built into .NET Core. You can register services in the ConfigureServices method of the Startup.cs file and then inject them into your controllers or other classes via constructor injection.
+11. What is Entity Framework Core?
+Entity Framework Core (EF Core) is an object-relational mapper (ORM) that allows developers to work with databases using .NET objects. It supports LINQ queries, change tracking, and schema migrations.
+12. How do you create a RESTful API in .NET Core?
+You can create a RESTful API in .NET Core by using the ASP.NET Core Web API template. You define controllers with action methods that correspond to HTTP verbs (GET, POST, PUT, DELETE) and use routing to map requests to these methods.
+13. What is the difference between synchronous and asynchronous programming in .NET Core?
+- Synchronous programming blocks the execution of code until a task is completed, while asynchronous programming allows other tasks to run concurrently without waiting.
+- Asynchronous programming in .NET Core is typically implemented using the async and await keywords.
+14. How do you handle configuration settings in a .NET Core application?
+Configuration settings in .NET Core are managed using the appsettings.json file. You can also use environment variables, command-line arguments, and other configuration providers. The IConfiguration interface is used to access these settings in your application.
+15. What is Kestrel in .NET Core?
+Kestrel is a cross-platform web server included with ASP.NET Core. It is lightweight and high-performance, making it suitable for hosting web applications and APIs.
+16. How do you perform logging in a .NET Core application?
+Logging in .NET Core is done using the built-in logging framework. You can configure logging providers (e.g., Console, Debug, File) in the ConfigureServices method of Startup.cs and use the ILogger interface to log messages in your application.
+17. What is the purpose of the .csproj file in a .NET Core project?
+The .csproj file is an XML-based project file that defines the project structure, dependencies, build settings, and other configurations for a .NET Core application or library.
+18. How do you publish a .NET Core application?
+You can publish a .NET Core application using the dotnet publish command in the CLI. This command compiles the application, copies the necessary files, and prepares it for deployment to a target environment.
+19. What is the difference between a self-contained and framework-dependent deployment in .NET Core?
+- Self-contained deployment includes the .NET Core runtime with the application, allowing it to run on machines without .NET Core installed.
+- Framework-dependent deployment relies on the presence of the .NET Core runtime on the target machine, resulting in a smaller application size.
+20. How do you secure a .NET Core web application?
+Securing a .NET Core web application can be done using various methods, including:
+- Implementing authentication and authorization using ASP.NET Core Identity or third-party providers (e.g., OAuth, OpenID Connect).
+- Using HTTPS to encrypt data in transit.
+- Validating user input to prevent injection attacks.
+- Configuring CORS (Cross-Origin Resource Sharing) policies.
+- Keeping dependencies up to date to avoid vulnerabilities.
+21. What is Razor in ASP.NET Core?
+Razor is a syntax for combining HTML markup with C# code in ASP.NET Core applications. It is commonly used in Razor Pages and MVC views to create dynamic web pages.
+22. How do you implement caching in a .NET Core application?
+Caching in .NET Core can be implemented using in-memory caching, distributed caching (e.g., Redis), or response caching. You can configure caching services in the ConfigureServices method and use attributes like [ResponseCache] to control caching behavior.
+23. What is the difference between ASP.NET Core MVC and Razor Pages?
+- ASP.NET Core MVC is a framework for building web applications using the Model-View-Controller pattern, allowing for more complex applications with separate concerns.
+- Razor Pages is a simpler, page-focused framework that combines the view and controller logic into a single page, making it easier to build simple web applications.
+24. How do you handle errors and exceptions in a .NET Core application?
+Error handling in .NET Core can be done using middleware like the Developer Exception Page for development and the Exception Handling Middleware for production. You can also use try-catch blocks in your code and implement custom error pages or logging for unhandled exceptions.
+25. What is the purpose of the wwwroot folder in a .NET Core project?
+The wwwroot folder is the default location for static files (e.g., HTML, CSS, JavaScript, images) in a .NET Core web application. Files in this folder are served directly to clients.
+26. How do you implement localization in a .NET Core application?
+Localization in .NET Core can be implemented using resource files (.resx) to store localized strings. You can configure localization services in the ConfigureServices method and use the IStringLocalizer interface to retrieve localized content based on the user's culture.
+27. What is the difference between a ViewComponent and a Partial View in ASP.NET Core?
+- A ViewComponent is a reusable component that encapsulates both rendering logic and view rendering, allowing for more complex functionality and separation of concerns.
+- A Partial View is a simple reusable view that can be included in other views but does not contain any logic.
+28. How do you implement unit testing in a .NET Core application?
+Unit testing in .NET Core can be done using testing frameworks like xUnit, NUnit, or MSTest. You can create test projects, write test methods, and use mocking libraries (e.g., Moq) to isolate dependencies and test individual components.
+29. What is the purpose of the launchSettings.json file in a .NET Core project?
+The launchSettings.json file contains settings for how the application is launched during development, including profiles for different environments, command-line arguments, and environment variables.
+30. How do you deploy a .NET Core application to Azure?
+You can deploy a .NET Core application to Azure using various methods, including:
+- Azure App Service: Publish directly from Visual Studio or use the Azure CLI.
+- Azure Functions: Deploy serverless applications using the Azure Functions Core Tools.
+- Azure Kubernetes Service (AKS): Containerize your application using Docker and deploy it to AKS.
+- Azure DevOps: Set up CI/CD pipelines for automated deployment.
+31. What is the difference between .NET Core and .NET 5/6/7?
+- .NET Core is the earlier version of the cross-platform framework, while .NET 5/6/7 are the unified versions that combine .NET Core and .NET Framework into a single platform.
+- .NET 5/6/7 offer improved performance, new features, and better support for modern application development compared to .NET Core.
+32. How do you manage environment-specific settings in a .NET Core application?
+Environment-specific settings in .NET Core can be managed using multiple appsettings.json files (e.g., appsettings.Development.json, appsettings.Production.json) and environment variables. The appropriate settings file is loaded based on the current environment.
+33. What is the purpose of the IHostedService interface in .NET Core?
+The IHostedService interface is used to create background services that run alongside a .NET Core application. It provides methods for starting and stopping the service, allowing you to implement long-running tasks or scheduled jobs.
+34. How do you implement authentication in a .NET Core application?
+Authentication in .NET Core can be implemented using ASP.NET Core Identity, JWT (JSON Web Tokens), or third-party providers like OAuth and OpenID Connect. You configure authentication services in the ConfigureServices method and set up middleware in the Configure method of Startup.cs.
+35. What is the difference between a Task and a Thread in .NET Core?
+- A Thread is a low-level construct that represents a separate path of execution in a program, while a Task is a higher-level abstraction that represents an asynchronous operation.
+- Tasks are managed by the Task Parallel Library (TPL) and provide features like continuations, cancellation, and exception handling, making them easier to work with than raw threads.
+36. How do you implement real-time communication in a .NET Core application?
+Real-time communication in .NET Core can be implemented using SignalR, a library that simplifies adding real-time web functionality. SignalR allows server-side code to push content to connected clients instantly.
+37. What is the purpose of the IActionResult interface in ASP.NET Core?
+The IActionResult interface represents the result of an action method in ASP.NET Core MVC. It allows you to return different types of responses (e.g., views, JSON, status codes) from your controller actions.
+38. How do you implement file uploads in a .NET Core application?
+File uploads in .NET Core can be implemented using the IFormFile interface. You can create a form in your view to accept file input and handle the uploaded file in your controller action by saving it to a specified location.
+39. What is the difference between a GET and POST request in a .NET Core Web API?
+- A GET request is used to retrieve data from the server and should not have side effects. It is idempotent and can be cached.
+- A POST request is used to submit data to the server, often resulting in a change in state or side effects. It is not idempotent and should not be cached.
+40. How do you implement pagination in a .NET Core Web API?
+Pagination in a .NET Core Web API can be implemented by accepting query parameters for page number and page size in your controller action. You can then use these parameters to skip and take the appropriate number of records from your data source before returning the results.
+41. What is the purpose of the [FromBody] attribute in ASP.NET Core?
+The [FromBody] attribute is used to specify that a parameter in a controller action should be bound from the request body. It is commonly used for POST and PUT requests where the data is sent in the body of the request, typically in JSON format.
+42. How do you implement role-based authorization in a .NET Core application?
+Role-based authorization in .NET Core can be implemented using the [Authorize] attribute with roles specified. You can configure roles in your authentication system and then restrict access to certain controller actions or entire controllers based on user roles.
+43. What is the difference between a synchronous and asynchronous action method in ASP.NET Core?
+- A synchronous action method executes in a blocking manner, meaning the thread is held until the method completes.
+- An asynchronous action method uses the async and await keywords, allowing the thread to be released while waiting for an operation to complete, improving scalability and responsiveness.
+44. How do you implement global error handling in a .NET Core application?
+Global error handling in .NET Core can be implemented using middleware. You can create custom middleware to catch exceptions and return appropriate error responses. Additionally, you can use the built-in Exception Handling Middleware to handle errors globally.
+45. What is the purpose of the IOptions<T> interface in .NET Core?
+The IOptions<T> interface is used to access configuration settings in a strongly typed manner. It allows you to bind configuration sections from appsettings.json or other sources to POCO (Plain Old CLR Object) classes, making it easier to manage and use configuration values in your application.
+46. How do you implement health checks in a .NET Core application?
+Health checks in .NET Core can be implemented using the Microsoft.Extensions.Diagnostics.HealthChecks package. You can configure health check services in the ConfigureServices method and set up an endpoint to expose the health status of your application.
+47. What is the difference between a View and a Partial View in ASP.NET Core MVC?
+- A View is a complete page that is rendered in response to a request, typically associated with a specific controller action.
+- A Partial View is a reusable component that represents a portion of a page and can be included in other views. It does not have its own action method.
+48. How do you implement session management in a .NET Core application?
+Session management in .NET Core can be implemented using the built-in session middleware. You can configure session services in the ConfigureServices method and use the HttpContext.Session property to store and retrieve session data.
+49. What is the purpose of the [ApiController] attribute in ASP.NET Core?
+The [ApiController] attribute is used to indicate that a controller is intended to serve as an API controller. It provides features like automatic model validation, binding source inference, and improved error responses for API endpoints.
+50. How do you implement rate limiting in a .NET Core Web API?
+Rate limiting in a .NET Core Web API can be implemented using middleware or third-party libraries like AspNetCoreRateLimit. You can configure rate limiting policies based on IP address, user identity, or other criteria to control the number of requests allowed within a specified time frame.
+51. What is the difference between a synchronous and asynchronous repository pattern in .NET Core?
+- A synchronous repository pattern executes database operations in a blocking manner, meaning the thread is held until the operation completes.
+- An asynchronous repository pattern uses async and await keywords, allowing the thread to be released while waiting for database operations to complete, improving scalability and responsiveness.
+52. How do you implement a custom middleware in a .NET Core application?
+You can implement custom middleware in a .NET Core application by creating a class with an Invoke or InvokeAsync method that takes an HttpContext parameter. You then register the middleware in the Configure method of Startup.cs using the app.UseMiddleware<T>() extension method.
+53. What is the purpose of the IApplicationBuilder interface in .NET Core?
+The IApplicationBuilder interface is used to configure the request pipeline in a .NET Core application. It provides methods to add middleware components that handle HTTP requests and responses.
+54. How do you implement a custom action filter in ASP.NET Core?
+You can implement a custom action filter in ASP.NET Core by creating a class that inherits from ActionFilterAttribute and overriding methods like OnActionExecuting and OnActionExecuted. You can then apply the filter to controllers or actions using the [ServiceFilter] or [TypeFilter] attributes.
+55. What is the difference between a synchronous and asynchronous logging in .NET Core?
+- Synchronous logging writes log entries in a blocking manner, meaning the thread is held until the log operation completes.
+- Asynchronous logging uses a background thread or queue to write log entries, allowing the main thread to continue executing without waiting for the log operation to complete, improving performance.
+56. How do you implement a custom validation attribute in ASP.NET Core?
+You can implement a custom validation attribute in ASP.NET Core by creating a class that inherits from ValidationAttribute and overriding the IsValid method. You can then apply the attribute to model properties to enforce custom validation rules.
+57. What is the purpose of the IDistributedCache interface in .NET Core?
+The IDistributedCache interface is used to implement distributed caching in a .NET Core application. It allows you to store and retrieve cache data across multiple servers or instances, improving scalability and performance.
+58. How do you implement a custom authorization policy in ASP.NET Core?
+You can implement a custom authorization policy in ASP.NET Core by creating a class that implements the IAuthorizationRequirement interface and a corresponding AuthorizationHandler. You then register the policy in the ConfigureServices method and apply it using the [Authorize] attribute with the policy name.
+59. What is the difference between a synchronous and asynchronous database operation in .NET Core?
+- A synchronous database operation executes in a blocking manner, meaning the thread is held until the operation completes.
+- An asynchronous database operation uses async and await keywords, allowing the thread to be released while waiting for the operation to complete, improving scalability and responsiveness.
+60. How do you implement a custom exception filter in ASP.NET Core?
+You can implement a custom exception filter in ASP.NET Core by creating a class that inherits from ExceptionFilterAttribute and overriding the OnException method. You can then apply the filter to controllers or actions using the [ServiceFilter] or [TypeFilter] attributes.
+61. What is the purpose of the IHostBuilder interface in .NET Core?
+The IHostBuilder interface is used to configure and build a host for a .NET Core application. It provides methods to set up services, logging, configuration, and other application settings.
+62. How do you implement a custom model binder in ASP.NET Core?
+You can implement a custom model binder in ASP.NET Core by creating a class that implements the IModelBinder interface and a corresponding IModelBinderProvider. You then register the model binder provider in the ConfigureServices method to handle specific types or models.
+63. What is the difference between a synchronous and asynchronous file operation in .NET Core?
+- A synchronous file operation executes in a blocking manner, meaning the thread is held until the operation completes.
+- An asynchronous file operation uses async and await keywords, allowing the thread to be released while waiting for the operation to complete, improving scalability and responsiveness.
+64. How do you implement a custom logging provider in .NET Core?
+You can implement a custom logging provider in .NET Core by creating a class that implements the ILoggerProvider and ILogger interfaces. You then register the custom provider in the ConfigureServices method to integrate it with the built-in logging framework.
+65. What is the purpose of the IWebHostBuilder interface in ASP.NET Core?
+The IWebHostBuilder interface is used to configure and build a web host for an ASP.NET Core application. It provides methods to set up the web server, services, middleware, and other application settings.
+66. How do you implement a custom tag helper in ASP.NET Core?
+You can implement a custom tag helper in ASP.NET Core by creating a class that inherits from TagHelper and overriding the Process or ProcessAsync method. You then register the tag helper in the _ViewImports.cshtml file to make it available in your views.
+67. What is the difference between a synchronous and asynchronous HTTP request in .NET Core?
+- A synchronous HTTP request executes in a blocking manner, meaning the thread is held until the request completes.
+- An asynchronous HTTP request uses async and await keywords, allowing the thread to be released while waiting for the request to complete, improving scalability and responsiveness.
+68. How do you implement a custom health check in a .NET Core application?
+You can implement a custom health check in a .NET Core application by creating a class that implements the IHealthCheck interface and overriding the CheckHealthAsync method. You then register the health check in the ConfigureServices method to include it in the health check endpoint.
+69. What is the purpose of the IEndpointRouteBuilder interface in ASP.NET Core?
+The IEndpointRouteBuilder interface is used to configure endpoint routing in an ASP.NET Core application. It provides methods to define routes for controllers, Razor Pages, and other endpoints in the application.
+70. How do you implement a custom response formatter in ASP.NET Core?
+You can implement a custom response formatter in ASP.NET Core by creating a class that inherits from TextOutputFormatter or OutputFormatter and overriding the WriteResponseBodyAsync method. You then register the custom formatter in the ConfigureServices method to include it in the list of available formatters.
+71. What is the difference between a synchronous and asynchronous email operation in .NET Core?
+- A synchronous email operation executes in a blocking manner, meaning the thread is held until the operation completes.
+- An asynchronous email operation uses async and await keywords, allowing the thread to be released while waiting for the operation to complete, improving scalability and responsiveness.
+72. How do you implement a custom authentication scheme in ASP.NET Core?
+You can implement a custom authentication scheme in ASP.NET Core by creating a class that inherits from AuthenticationHandler<TOptions> and overriding the HandleAuthenticateAsync method. You then register the custom scheme in the ConfigureServices method using the AddAuthentication and AddScheme methods.
+73. What is the purpose of the IApplicationLifetime interface in .NET Core?
+The IApplicationLifetime interface is used to manage the lifetime events of a .NET Core application. It provides events like ApplicationStarted, ApplicationStopping, and ApplicationStopped to perform actions during these lifecycle stages.
+74. How do you implement a custom response caching in ASP.NET Core?
+You can implement custom response caching in ASP.NET Core by using the Response Caching Middleware. You can configure caching options in the ConfigureServices method and apply the [ResponseCache] attribute to controller actions to control caching behavior.
+75. What is the difference between a synchronous and asynchronous image processing operation in .NET Core?
+- A synchronous image processing operation executes in a blocking manner, meaning the thread is held until the operation completes.
+- An asynchronous image processing operation uses async and await keywords, allowing the thread to be released while waiting for the operation to complete, improving scalability and responsiveness.
+76. How do you implement a custom serialization in .NET Core?
+You can implement custom serialization in .NET Core by creating a class that implements the ISerializer interface or by using JsonConverter for JSON serialization. You then register the custom serializer in the ConfigureServices method to integrate it with the built-in serialization framework.
+77. What is the purpose of the IHostEnvironment interface in .NET Core?
+The IHostEnvironment interface is used to access information about the hosting environment of a .NET Core application, such as the environment name (Development, Staging, Production) and the content root path.
+78. How do you implement a custom request logging in ASP.NET Core?
+You can implement custom request logging in ASP.NET Core by creating middleware that logs details about incoming requests and outgoing responses. You then register the middleware in the Configure method of Startup.cs using the app.UseMiddleware<T>() extension method.
+79. What is the difference between a synchronous and asynchronous data processing operation in .NET Core?
+- A synchronous data processing operation executes in a blocking manner, meaning the thread is held until the operation completes.
+- An asynchronous data processing operation uses async and await keywords, allowing the thread to be released while waiting for the operation to complete, improving scalability and responsiveness.
+80. How do you implement a custom response header in ASP.NET Core?
+You can implement a custom response header in ASP.NET Core by creating middleware that adds the desired headers to the HttpResponse. You then register the middleware in the Configure method of Startup.cs using the app.UseMiddleware<T>() extension method.
+81. What is the purpose of the IControllerActivator interface in ASP.NET Core?
+The IControllerActivator interface is used to create instances of controllers in an ASP.NET Core application. It allows you to customize the controller creation process, such as using a dependency injection container or implementing custom logic.
+82. How do you implement a custom request validation in ASP.NET Core?
+You can implement custom request validation in ASP.NET Core by creating a class that implements the IValidatableObject interface or by using model validation attributes. You can also create custom middleware to validate requests before they reach the controller actions.
+83. What is the difference between a synchronous and asynchronous logging operation in .NET Core?
+- A synchronous logging operation executes in a blocking manner, meaning the thread is held until the log operation completes.
+- An asynchronous logging operation uses a background thread or queue to write log entries, allowing the main thread to continue executing without waiting for the log operation to complete, improving performance.
+84. How do you implement a custom response transformation in ASP.NET Core?
+You can implement custom response transformation in ASP.NET Core by creating middleware that modifies the HttpResponse before it is sent to the client. You then register the middleware in the Configure method of Startup.cs using the app.UseMiddleware<T>() extension method.
+85. What is the purpose of the IRouteConstraint interface in ASP.NET Core?
+The IRouteConstraint interface is used to define custom constraints for route parameters in ASP.NET Core. It allows you to enforce specific rules on route values, such as ensuring a parameter is an integer or matches a specific pattern.
+86. How do you implement a custom request throttling in ASP.NET Core?
+You can implement custom request throttling in ASP.NET Core by creating middleware that tracks the number of requests from a client and limits the rate of requests based on predefined rules. You can use in-memory storage or distributed caching to store request counts and timestamps.
+87. What is the difference between a synchronous and asynchronous file upload operation in .NET Core?
+- A synchronous file upload operation executes in a blocking manner, meaning the thread is held until the upload operation completes.
+- An asynchronous file upload operation uses async and await keywords, allowing the thread to be released while waiting for the upload operation to complete, improving scalability and responsiveness.
+88. How do you implement a custom response compression in ASP.NET Core?
+You can implement custom response compression in ASP.NET Core by using the Response Compression Middleware. You can configure compression options in the ConfigureServices method and enable the middleware in the Configure method of Startup.cs using the app.UseResponseCompression() extension method.
+89. What is the purpose of the IViewComponentHelper interface in ASP.NET Core?
+The IViewComponentHelper interface is used to render view components in ASP.NET Core. It provides methods to invoke and render view components from views or controllers.
+90. How do you implement a custom request correlation in ASP.NET Core?
+You can implement custom request correlation in ASP.NET Core by creating middleware that generates a unique correlation ID for each incoming request and adds it to the HttpContext. You can then include the correlation ID in log entries and responses to trace requests across different components of the application.
+91. What is the difference between a synchronous and asynchronous data retrieval operation in .NET Core?
+- A synchronous data retrieval operation executes in a blocking manner, meaning the thread is held until the operation completes.
+- An asynchronous data retrieval operation uses async and await keywords, allowing the thread to be released while waiting for the operation to complete, improving scalability and responsiveness.
+92. How do you implement a custom response formatting in ASP.NET Core?
+		
+You can implement custom response formatting in ASP.NET Core by creating a class that inherits from TextOutputFormatter or OutputFormatter and overriding the WriteResponseBodyAsync method. You then register the custom formatter in the ConfigureServices method to include it in the list of available formatters.
+93. What is the purpose of the ITempDataDictionary interface in ASP.NET Core?
+The ITempDataDictionary interface is used to store temporary data that is available for the duration of a single request and the subsequent request. It is commonly used to pass data between actions or views.
+94. How do you implement a custom request logging format in ASP.NET Core?
+			
+You can implement a custom request logging format in ASP.NET Core by creating middleware that logs request details in your desired format. You can use the ILogger interface to log the information and register the middleware in the Configure method of Startup.cs using the app.UseMiddleware<T>() extension method.
+95. What is the difference between a synchronous and asynchronous data processing operation in .NET Core?
+- A synchronous data processing operation executes in a blocking manner, meaning the thread is held until the operation completes.
+- An asynchronous data processing operation uses async and await keywords, allowing the thread to be released while waiting for the operation to complete, improving scalability and responsiveness.
+96. How do you implement a custom response caching policy in ASP.NET Core?
+You can implement a custom response caching policy in ASP.NET Core by creating middleware that sets cache-related headers on the HttpResponse. You can also use the [ResponseCache] attribute with custom settings to control caching behavior for specific controller actions.
+97. What is the purpose of the IUrlHelper interface in ASP.NET Core?
+The IUrlHelper interface is used to generate URLs for routes, actions, and content in an ASP.NET Core application. It provides methods to create URLs based on route names, action names, and parameters.
+98. How do you implement a custom request validation attribute in ASP.NET Core?
+You can implement a custom request validation attribute in ASP.NET Core by creating a class that inherits from ValidationAttribute and overriding the IsValid method. You can then apply the attribute to model properties to enforce custom validation rules.
+99. What is the difference between a synchronous and asynchronous database query operation in .NET Core?
+- A synchronous database query operation executes in a blocking manner, meaning the thread is held until the operation completes.
+- An asynchronous database query operation uses async and await keywords, allowing the thread to be released while waiting for the operation to complete, improving scalability and responsiveness.
+100. How do you implement a custom response transformation middleware in ASP.NET Core?
+You can implement custom response transformation middleware in ASP.NET Core by creating a class with an Invoke or InvokeAsync method that modifies the HttpResponse before it is sent to the client. You then register the middleware in the Configure method of Startup.cs using the app.UseMiddleware<T>() extension method.
+
+
+
+
+
+**********Middleware**********
+1. What is Middleware in ASP.NET Core?
+Answer: Middleware is a software component that is part of the request pipeline. Each middleware can inspect, modify, or terminate the HTTP request/response.
+
+Code Example:
+app.Use(async (context, next) =>
+{
+Console.WriteLine("Middleware 1: Before");
+await next.Invoke();
+Console.WriteLine("Middleware 1: After");
+});
+
+2. How Do You Create Custom Middleware?
+Answer: You create a class with an InvokeAsync method and register it using UseMiddleware.
+
+Code Example:
+public class LoggingMiddleware
+{
+private readonly RequestDelegate _next;
+public LoggingMiddleware(RequestDelegate next) => _next = next;
+
+public async Task InvokeAsync(HttpContext context)
+{
+Console.WriteLine($"Request: {context.Request.Path}");
+await _next(context);
+Console.WriteLine($"Response: {context.Response.StatusCode}");
+}
+}
+
+// Register in Program.cs
+app.UseMiddleware<LoggingMiddleware>();
+
+
+3. What Is the Order of Middleware Execution?
+Answer: Middleware executes in the order it is registered. The first middleware receives the request first and the last one sends the response.
+
+Tip: Place UseRouting() before UseAuthorization() and UseEndpoints() last.
+
+4. What Is Terminal Middleware?
+Answer: Terminal middleware ends the pipeline and doesn’t call next().
+
+Code Example:
+app.Run(async context =>
+{
+await context.Response.WriteAsync("This is terminal middleware.");
+});
+
+5. How Do You Handle Exceptions in Middleware?
+Answer: Use UseExceptionHandler() or write custom middleware to catch exceptions.
+
+Code Example:
+public class ExceptionMiddleware
+{
+private readonly RequestDelegate _next;
+public ExceptionMiddleware(RequestDelegate next) => _next = next;
+
+public async Task InvokeAsync(HttpContext context)
+{
+try
+{
+await _next(context);
+}
+catch (Exception ex)
+{
+context.Response.StatusCode = 500;
+await context.Response.WriteAsync("An error occurred.");
+}
+}
+}
+
+6. What Are Common Built-in Middleware Components?
+Answer:
+
+Middleware	                Purpose
+UseRouting()	        Matches request to endpoints
+UseAuthentication()	    Handles user authentication
+UseAuthorization()	    Enforces access control
+UseStaticFiles()	    Serves static content
+UseCors()	            Enables cross-origin requests
+
+7. How Do You Inject Services into Middleware?
+Answer: Use IMiddleware interface and register the middleware in DI.
+
+Code Example:
+public class MyServiceMiddleware : IMiddleware
+{
+private readonly ILogger<MyServiceMiddleware> _logger;
+public MyServiceMiddleware(ILogger<MyServiceMiddleware> logger) => _logger = logger;
+
+public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+{
+_logger.LogInformation("Processing request...");
+await next(context);
+}
+}
+
+// Register
+builder.Services.AddTransient<MyServiceMiddleware>();
+app.UseMiddleware<MyServiceMiddleware>();
+
+
+8. How Can You Use Middleware for Localization?
+Answer: Use UseRequestLocalization() to set culture based on headers, query strings, etc.
+
+Code Example:
+var supportedCultures = new[] { "en-US", "fr-FR" };
+var localizationOptions = new RequestLocalizationOptions()
+.SetDefaultCulture("en-US")
+.AddSupportedCultures(supportedCultures)
+.AddSupportedUICultures(supportedCultures);
+
+app.UseRequestLocalization(localizationOptions);
+
+
+9. How Do You Test Middleware?
+Answer: Use integration tests with TestServer or mock HttpContext in unit tests.
+
+Code Snippet:
+	var context = new DefaultHttpContext();
+	var middleware = new LoggingMiddleware((innerHttpContext) => Task.CompletedTask);
+	await middleware.InvokeAsync(context);
+
+10. Can Middleware Be Conditional?
+Answer: Yes, use MapWhen() to conditionally execute middleware.
+
+Code Example:
+	app.MapWhen(context => context.Request.Path.StartsWithSegments("/admin"), adminApp =>
+	{
+		adminApp.Use(async (ctx, next) =>
+		{
+			await ctx.Response.WriteAsync("Admin area");
+		});
+	});
+
+
+
+Question	                                    Key Point
+What is middleware?	                        Pipeline component for request/response
+How to create custom middleware?	        Use InvokeAsync or IMiddleware
+What is terminal middleware?	            Ends pipeline, doesn’t call next()
+How to inject services?	                    Use IMiddleware and register in DI
+How to handle exceptions?	                Try-catch in middleware or UseExceptionHandler
+How to localize?	                        Use UseRequestLocalization()
+How to test middleware?	                    Use TestServer or mock HttpContext
+
+
+Lifetime Comparison Table   
+Method	                        Instance Lifetime	                                    Use Case Example                            Other Use Case
+AddSingleton	                One instance for the entire application	                Logging, configuration, caching             like coffee machine in office, one machine used by everyone
+AddScoped	                    One instance per HTTP request	                        Database context, user session              like same waiter serving food at your table in resturent everytime whatever you demand
+AddTransient	                New instance every time it's requested	                Lightweight, stateless services             like disposal pen given in seminar, every time you demand, they will give new pen
+
+services.AddSingleton<ILogService, LogService>();
+services.AddScoped<IUserService, UserService>();
+services.AddTransient<IEmailService, EmailService>();

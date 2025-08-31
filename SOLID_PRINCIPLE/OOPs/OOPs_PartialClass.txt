@@ -1,0 +1,68 @@
+﻿****What is Partial Class in C#?
+// A partial class in C# is a class whose definition can be split across multiple files.
+// This allows for better organization of code, especially in large projects or when working with auto-generated code.
+// All parts of the partial class must use the 'partial' keyword and have the same access modifier (e.g., public, private).
+// When the application is compiled, all parts are combined into a single class.
+// Example of Partial Class in C#
+// File: Person.Part1.cs
+public partial class Person
+{
+	public string FirstName { get; set; }
+	public string LastName { get; set; }
+	public void DisplayFullName()
+	{
+		Console.WriteLine($"Full Name: {FirstName} {LastName}");
+	}
+}
+// File: Person.Part2.cs
+public partial class Person
+{
+	public int Age { get; set; }
+	public void DisplayAge()
+	{
+		Console.WriteLine($"Age: {Age}");
+	}
+}
+// Usage
+class Program
+{
+	static void Main(string[] args)
+	{
+		Person person = new Person
+		{
+			FirstName = "John",
+			LastName = "Doe",
+			Age = 30
+		};
+		person.DisplayFullName(); // Output: Full Name: John Doe
+		person.DisplayAge();      // Output: Age: 30
+	}
+}
+// In this example, the 'Person' class is split into two files: 'Person.Part1.cs' and 'Person.Part2.cs'.
+// Each file contains different properties and methods of the 'Person' class.
+// When compiled, both parts are combined into a single 'Person' class.
+// This allows for better organization and separation of concerns within the class definition.
+// Benefits of Using Partial Classes
+// 1. Improved Code Organization: Large classes can be broken down into smaller, more manageable files.
+// 2. Collaboration: Multiple developers can work on different parts of the same class without causing merge conflicts.
+// 3. Auto-Generated Code: Partial classes are often used in scenarios where part of the class is auto-generated (e.g., designer files in Windows Forms or ASP.NET).
+// Limitations of Partial Classes
+// 1. All parts must have the same access modifier.
+// 2. All parts must be in the same namespace.
+// 3. Partial classes cannot be nested within other classes.
+// 4. Static constructors cannot be split across multiple parts.
+// Conclusion
+// Partial classes are a useful feature in C# that allows for better organization and collaboration in code.
+// They are particularly beneficial in large projects and scenarios involving auto-generated code.
+// However, they should be used judiciously to avoid confusion and maintain code readability.
+
+
+When do we need to use Partial Class in C#?
+There are several situations when splitting a class definition is desirable
+
+When working on large projects, splitting a class over separate files allows multiple programmers to work on it simultaneously.
+When working with automatically generated source code, the code can be added to the class without having to recreate the source file. Visual Studio uses this approach when creating windows form, Web service wrapper code, and so on.
+When a class is very large, splitting it into multiple files can make it easier to manage.
+When a class has multiple responsibilities, splitting it into multiple files can help to separate those responsibilities.
+When working with partial classes, it's important to ensure that all parts of the class are kept in sync and that any changes made to one part are reflected in the other parts. This can be done by using a version control system or by using a build system that automatically compiles all parts of the class together.
+Partial classes are a useful feature in C# that allows for better organization and collaboration in code. They are particularly beneficial in large projects and scenarios involving auto-generated code. However, they should be used judiciously to avoid confusion and maintain code readability.

@@ -1,0 +1,179 @@
+﻿****What is OOP?
+			 Object-Oriented Programming (OOP) is a programming paradigm that uses "objects" to represent data and methods to manipulate that data. 
+			 It emphasizes concepts such as encapsulation, inheritance, polymorphism, and abstraction.
+			 OOP helps in organizing code, making it more modular, reusable, and easier to maintain.
+
+****Key Concepts of OOP:
+
+****Encapsulation
+Bundling data and methods that operate on that data into a single unit called a class, restricting direct access to some of an object's components.
+	Example:
+		public class Person {
+			private string name; // Encapsulated field
+		
+			public void SetName(string newName) {
+				name = newName;
+			}
+
+			public string GetName() {
+				return name;
+			}
+		}
+
+****Inheritance
+Mechanism where a new class (derived class) can inherit attributes and methods from an existing class (base class). Promotes code reuse and establishes a relationship between classes.
+	Example:
+		public class Animal {
+			public void Eat() {
+				Console.WriteLine("Eating...");
+			}
+		}
+		public class Dog : Animal {			//Dog inherits from Animal
+			public void Bark() {
+				Console.WriteLine("Barking...");
+			}
+		}
+
+****Polymorphism 
+Ability of different classes to be treated as instances of the same class through a common interface. 
+Allows methods to do different things based on the object that it is acting upon.
+	Example:
+		public class Shape {
+			public virtual void Draw() {					//created method as virtual in base class
+				Console.WriteLine("Drawing a shape");
+			}
+		}
+
+		public class Circle : Shape {
+			public override void Draw() {						//override method with override keyword in child class
+				Console.WriteLine("Drawing a circle");
+			}
+		}
+
+		public class Square : Shape {
+			public override void Draw() {						//override method with override keyword in child class
+				Console.WriteLine("Drawing a square");
+			}
+		}
+
+****Abstraction:
+Hiding complex implementation details and showing only the essential features of the object.
+Helps in reducing complexity and increases efficiency.
+	Example:
+	public abstract class Vehicle {
+		public abstract void Start(); // Abstract method
+	}
+	public class Car : Vehicle {
+		public override void Start() {
+			Console.WriteLine("Car started");
+		}
+	}
+	
+****Sealed class
+A sealed class in C# is a class that cannot be inherited from. It is used to prevent further inheritance of a class, ensuring that the class's implementation remains unchanged.
+A sealed class is declared using the `sealed` keyword before the class definition.
+	Example:
+	public sealed class SealedClass
+	{
+		public void Display()
+		{
+			Console.WriteLine("This is a sealed class method.");
+		}
+	}
+
+	// Attempting to inherit from a sealed class will result in a compile-time error.
+	public class DerivedClass : SealedClass		// This will cause a compile-time error:
+	{ 
+		// Cannot derive from sealed class 'SealedClass'
+	} 
+
+****Why Use Sealed Classes?
+A sealed class is useful when you want to ensure that the class's behavior cannot be altered through inheritance.
+It can also improve performance by allowing the compiler to optimize method calls.
+Sealed classes are often used in scenarios where the class is complete and should not be extended, such as utility classes or final implementations of a class hierarchy.
+	1. Prevent Inheritance
+			Protects your class from being extended or modified through subclassing.
+			Useful in security-critical or domain-specific logic.
+	2. Performance Optimization
+			The .NET runtime can make method calls faster because it knows the class won’t be overridden.
+	3. Documentation of Intent
+			Signals to other developers - “This class is complete. Don’t extend it.”
+	4. Security and Stability
+			Prevents unintended behavior changes in third-party or internal libraries.
+
+// Sealed Methods	=>	We can also seal methods in a derived class to prevent further overriding:
+	public class Printer
+	{
+		public virtual void Print()
+		{
+			Console.WriteLine("Printing...");
+		}
+	}
+
+	public class LaserPrinter : Printer
+	{
+		public sealed override void Print()			// making the method sealed
+		{
+			Console.WriteLine("Laser printing...");
+		}
+	}
+
+	public class OfficePrinter : LaserPrinter {
+	     public override void Print() { }			 // while override is allowed, sealed prevents further overriding  => This will cause an error:
+	 }
+
+****When should a class be declared as sealed?
+		A sealed class should be used when we want to prevent any further inheritance from that class. This ensures that no other class can derive from it.
+			public sealed class FinalClass
+			{
+				public void Display()
+				{
+					Console.WriteLine("This is a sealed class method.");
+				}
+			}
+
+			// This will cause a compile-time error:
+			public class DerivedClass : FinalClass 
+			{ 
+			
+			} // Cannot derive from sealed class 'FinalClass'
+
+		In summary, sealed classes and methods in C# are powerful tools for controlling inheritance and ensuring the integrity of your class designs. 
+		They provide a way to enforce design decisions, improve performance, and maintain the stability of your codebase.
+
+****What are the differences between an abstract class and a sealed class?
+	Use abstract classes when designing a common base for multiple related classes.
+	Use sealed classes when ensuring no modifications or inheritance.
+
+// Abstract Class Example:
+public abstract class Animal
+{
+	public abstract void Speak(); // Abstract method
+}
+public class Dog : Animal
+{
+	public override void Speak()
+	{
+		Console.WriteLine("Woof!");
+	}
+}
+
+
+// Sealed Class Example:
+public sealed class MathUtilities
+{
+	public static int Add(int a, int b)
+	{
+		return a + b;
+	}
+}
+// Attempting to inherit from MathUtilities will cause a compile-time error
+public class AdvancedMath : MathUtilities 
+{ 
+	// Cannot derive from sealed class 'MathUtilities'
+} 
+
+// In conclusion, OOP principles like encapsulation, inheritance, polymorphism, and abstraction are fundamental to creating robust and maintainable software.
+// Sealed classes and methods provide additional control over inheritance, ensuring that certain classes or methods cannot be extended or modified.
+// This helps maintain the integrity of your code and can lead to performance optimizations.
+

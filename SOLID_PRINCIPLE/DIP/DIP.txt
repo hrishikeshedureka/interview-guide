@@ -1,0 +1,14 @@
+﻿**DIP**
+
+UserServiceViolates methods that use the Database instance is tightly couples with the Database class to creating a direct dependency.
+
+If we decide to alter the database implementation, we would need to modify the UserService class as well.
+
+We will need to refactor the UserService class to follow the Dependency Inversion Principle (DIP).
+
+By applying the DIP, we achieve a more flexible and maintainable design enabling us to evolve and adapt our system more easy over time.
+
+Created interface IDatabase to abstract the database operations.
+Created DatabaseService class that implements IDatabase.
+Created UserService class that depends on IDatabase instead of the concrete Database class.
+// This allows us to swap out the database implementation without changing the UserService class.

@@ -1,0 +1,73 @@
+[
+  {
+    "ContainingType": "DotNetCoreApiDemo.Controllers.AddSingletonScopeTransientController",
+    "Method": "Get",
+    "RelativePath": "api/AddSingletonScopeTransient",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCoreApiDemo.Controllers.AddSingletonScopeTransientController",
+    "Method": "Lifetime",
+    "RelativePath": "api/AddSingletonScopeTransient/GetLifetime_v2",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCoreApiDemo.Controllers.AddSingletonScopeTransientController",
+    "Method": "Index",
+    "RelativePath": "api/AddSingletonScopeTransient/Index",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCoreApiDemo.Controllers.HomeController",
+    "Method": "Index",
+    "RelativePath": "api/Home/Index",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DotNetCoreApiDemo.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DotNetCoreApiDemo.WeatherForecast, DotNetCoreApiDemo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  },
+  {
+    "ContainingType": "DotNetCoreApiDemo.Controllers.WeatherForecastController",
+    "Method": "Lifetime",
+    "RelativePath": "WeatherForecast/GetLifetime",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

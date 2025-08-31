@@ -1,0 +1,59 @@
+﻿**** What is JWT and why do we need it?		
+	JWT (JSON Web Token) is a compact, URL-safe means of representing claims to be transferred between two parties.
+	It is commonly used for authentication and information exchange in web applications.
+	We need JWT for several reasons:
+	1. Stateless Authentication: JWT allows for stateless authentication, meaning the server does not need to store session information. The token itself contains all the necessary information about the user.
+	2. Scalability: Since JWTs are self-contained, they can be easily used in distributed systems and microservices architectures without the need for centralized session storage.
+	3. Security: JWTs can be signed using a secret (HMAC) or a public/private key pair (RSA or ECDSA), ensuring the integrity and authenticity of the token.
+	4. Flexibility: JWTs can carry any type of information (claims) in a structured way, allowing for custom data to be included as needed.
+	5. Cross-Domain Authentication: JWTs can be used across different domains, making them suitable for single sign-on (SSO) scenarios.
+	6. Ease of Use: JWTs are easy to use and can be easily integrated into web applications, mobile apps, and APIs.
+	Overall, JWT provides a secure and efficient way to handle authentication and information exchange in modern web applications.
+	// Example of a JWT structure:
+	// Header: Contains metadata about the token, such as the signing algorithm.
+	// Payload: Contains the claims or data being transmitted.
+	// Signature: Used to verify the integrity of the token and ensure it has not been tampered with.
+	// A JWT looks like this: xxxxx.yyyyy.zzzzz
+	// Where:
+	// xxxxx = Base64Url encoded header
+	// yyyyy = Base64Url encoded payload
+	// zzzzz = Base64Url encoded signature
+	// Example of using JWT in a .NET Core API for authentication
+
+	// 1. Install the necessary NuGet packages:
+	//    - Microsoft.AspNetCore.Authentication.JwtBearer
+	//    - System.IdentityModel.Tokens.Jwt
+	// 2. Configure JWT authentication in Startup.cs
+	// public void ConfigureServices(IServiceCollection services)
+	// {
+	//     var key = Encoding.ASCII.GetBytes("your_secret_key_here");
+	//     services.AddAuthentication(x =>
+	//     {
+	//         x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+	//         x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+	//     })
+	//     .AddJwtBearer(x =>
+	//     {
+	//         x.RequireHttpsMetadata = false;
+	//         x.SaveToken = true;
+	//         x.TokenValidationParameters = new TokenValidationParameters
+	//         {
+	//             ValidateIssuerSigningKey = true;
+	//             IssuerSigningKey = new SymmetricSecurityKey(key),
+	//             ValidateIssuer = false,
+	//             ValidateAudience = false
+	//         };
+	//     });
+	//     services.AddControllers();
+	// }
+	// 3. Create a method to generate JWT tokens
+	// public string GenerateJwtToken(string username)
+	// {	
+	//     var tokenHandler = new JwtSecurityTokenHandler();
+	//     var key = Encoding.ASCII.GetBytes("your_secret_key_here");
+	//     var tokenDescriptor = new SecurityTokenDescriptor
+	//     {
+	//         Subject = new ClaimsIdentity(new Claim[]
+	//         {
+	//             new Claim(ClaimTypes.Name, username)
+		

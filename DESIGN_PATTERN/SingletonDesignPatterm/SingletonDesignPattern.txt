@@ -1,0 +1,62 @@
+﻿**SDP**
+	The Singleton Design Pattern is one of the most widely used creational patterns in C#. 
+	It ensures that a class has only one instance and provides a global point of access to it.
+
+**Why Use Singleton?**
+	You need exactly one instance of a class.
+	That instance should be shared across the application.
+	You want controlled access to shared resources like configuration settings, logging, or database connections.
+
+**Key Characteristics**
+	Private constructor to prevent external instantiation.
+	Static field to hold the single instance.
+	Public static property to provide access.
+	Optional: Thread safety for multi-threaded environments.
+
+**Real-World Use Cases**
+	Logging service: One logger shared across the app.
+	Configuration manager: Centralized access to settings.
+	Database connection pool: One controller managing connections.
+
+********why sealed class?********
+The Singleton should always be a 'sealed' class to prevent class inheritance through external classes and also through nested classes.
+
+
+
+// The Singleton class defines the `GetInstance` method that serves as an
+    // alternative to constructor and lets clients access the same instance of
+    // this class over and over.
+
+    // EN : The Singleton should always be a 'sealed' class to prevent class
+    // inheritance through external classes and also through nested classes.
+    public sealed class Singleton
+    {
+        // The Singleton's constructor should always be private to prevent
+        // direct construction calls with the `new` operator.
+        private Singleton() { }
+
+        // The Singleton's instance is stored in a static field. 
+        private static Singleton _instance = null;
+        private static readonly object _lock = new object();
+
+        // This is the static method that controls the access to the singleton
+        // instance. On the first run, it creates a singleton object and places
+        // it into the static field. On subsequent runs, it returns the client
+        // existing object stored in the static field.
+        public static Singleton GetInstance()
+        {
+            lock (_lock)  //Thread-Safe Singleton (Using Lock)
+            {
+                if (_instance == null)
+                {
+                    _instance = new Singleton();
+                }
+            }
+            return _instance;
+        }
+
+        public void SomeBusinessLogic()
+        {
+            Console.WriteLine("Executing some business logic in Singleton class.");
+        }
+    }

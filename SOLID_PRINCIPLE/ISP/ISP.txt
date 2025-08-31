@@ -1,0 +1,23 @@
+﻿**ISP**
+Clients should not be forced to depend on interfaces they do not use.
+
+In C#, this means you should avoid creating fat interfaces—those with too many unrelated methods—and 
+instead split them into smaller, role-specific interfaces.
+
+ The IWorker interface violates the ISP, 
+ as it forces the RobotWorker class to implement the Eat and Sleep methods, which are irrelevant for robots. 
+ 
+ To adhere to the ISP, we can break down the IWorker interface into smaller, more specific interfaces:
+
+
+
+ **Best Practices**
+ Keep Interfaces Focused
+ Use Multiple Interfaces
+ Leverage Composition
+
+
+
+ The main goal of the Interface Segregation Principle is to ensure that clients are not forced to implement interfaces they do not use. 
+ By breaking down interfaces into smaller, more specific interfaces, clients can implement only the methods that are relevant to their needs, 
+ reducing coupling and promoting a more flexible architecture.

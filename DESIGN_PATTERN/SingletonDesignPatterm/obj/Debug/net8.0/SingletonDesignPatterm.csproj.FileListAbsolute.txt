@@ -1,0 +1,28 @@
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.exe
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.deps.json
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.runtimeconfig.json
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.pdb
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.AssemblyInfoInputs.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.AssemblyInfo.cs
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.csproj.CoreCompileInputs.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\refint\SingletonDesignPatterm.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.pdb
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.genruntimeconfig.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\ref\SingletonDesignPatterm.dll
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.exe
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.deps.json
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.runtimeconfig.json
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.dll
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\bin\Debug\net8.0\SingletonDesignPatterm.pdb
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.GeneratedMSBuildEditorConfig.editorconfig
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.AssemblyInfoInputs.cache
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.AssemblyInfo.cs
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.csproj.CoreCompileInputs.cache
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.dll
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\refint\SingletonDesignPatterm.dll
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.pdb
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\SingletonDesignPatterm.genruntimeconfig.cache
+D:\HRISHI\Training\InterviewReadiness\DESIGN_PATTERN\SingletonDesignPatterm\obj\Debug\net8.0\ref\SingletonDesignPatterm.dll

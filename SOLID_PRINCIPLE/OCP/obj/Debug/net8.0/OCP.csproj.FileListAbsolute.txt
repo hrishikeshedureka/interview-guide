@@ -1,0 +1,28 @@
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.exe
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.deps.json
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.runtimeconfig.json
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.pdb
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.AssemblyInfoInputs.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.AssemblyInfo.cs
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.csproj.CoreCompileInputs.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\refint\OCP.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.pdb
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.genruntimeconfig.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\ref\OCP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.exe
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.deps.json
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.runtimeconfig.json
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\bin\Debug\net8.0\OCP.pdb
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.GeneratedMSBuildEditorConfig.editorconfig
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.AssemblyInfoInputs.cache
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.AssemblyInfo.cs
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.csproj.CoreCompileInputs.cache
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\refint\OCP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.pdb
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\OCP.genruntimeconfig.cache
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\OCP\obj\Debug\net8.0\ref\OCP.dll

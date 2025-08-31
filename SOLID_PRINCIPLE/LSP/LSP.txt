@@ -1,0 +1,36 @@
+﻿**LSP**
+	Objects of a superclass should be replaceable with objects of a subclass without altering the correctness of the program.
+
+**For Example:**
+	Created seperate interface for different types like IFileWriter , IFileReader, IEmployeeBonusDetails and IEmployeeDetails
+	While inherting, only required interface is inherited instead of inheriting all the interfaces.
+	// This allows for more flexibility and maintainability in the codebase, adhering to the Liskov Substitution Principle.
+
+	in Program.cs => created object of Parent class which accepts the interface type as below:
+
+	IFileReader fileReader = new Admin();
+	IFileWriter fileWriter = new Admin();
+	fileReader.ReadFile("Reading file as Admin.");
+	fileWriter.WriteFile("Writing file as Admin.");
+
+	fileWriter = new Registered();
+	fileWriter.WriteFile("Writing file as Registered user.");
+
+	fileWriter = new Guest();
+	fileWriter.WriteFile("Writing file as Guest.");
+
+
+	IEmployeeDetails employeeDetails = new PermanentEmployee();
+	IEmployeeBonusDetails employeeBonusDetails = new PermanentEmployee();
+
+	employeeDetails.DisplayEmployeeDetails("John Doe", "Software Engineer", 60000);
+	employeeBonusDetails.CalculateBonus(60000, 0.10m);
+
+
+	employeeDetails = new TemporaryEmployee();
+	employeeBonusDetails = new TemporaryEmployee();
+	employeeDetails.DisplayEmployeeDetails("Jane Smith", "Data Analyst", 50000);
+	employeeBonusDetails.CalculateBonus(50000, 0.05m);
+
+	employeeDetails = new ContractEmployee();
+	employeeDetails.DisplayEmployeeDetails("Alice Johnson", "Project Manager", 70000);

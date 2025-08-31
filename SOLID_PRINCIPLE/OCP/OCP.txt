@@ -1,0 +1,9 @@
+﻿**OCP**
+	The Open/Closed Principle (OCP) states that classes, modules or functions should be open for extension but closed for modification. 
+	This means that you should be able to add new functionality without altering existing, working code. 
+
+**Techniques to Implement OCP in C#**
+	Interfaces and Abstract Classes: Define contracts that can be extended.
+	Strategy Pattern: Encapsulate algorithms in interchangeable classes.
+	Decorator Pattern: Add behavior dynamically without altering the original class.
+	Dependency Injection: Inject dependencies to decouple and extend behavior.

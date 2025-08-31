@@ -1,0 +1,55 @@
+﻿**Factory Method Design Pattern**
+	Define an interface for creating an object, but let subclasses decide which class to instantiate.
+	This promotes loose coupling, extensibility, and testability.
+
+**Basic Structure**
+Role				Description
+Product				Abstract class or interface for the object being created
+ConcreteProduct		Actual implementation of the product
+Creator				Abstract class with the factory method
+ConcreteCreator		Subclass that overrides the factory method to return a specific product
+
+**Benefits**
+	Encapsulates object creation logic
+	Promotes loose coupling
+	Supports Open/Closed Principle
+	Simplifies testing and mocking
+
+** Example Code**
+// Product
+public abstract class CreditCard {
+    public abstract string GetCardType();
+    public abstract int GetCreditLimit();
+}
+
+// Concrete Products
+public class MoneyBackCard : CreditCard {
+    public override string GetCardType() => "MoneyBack";
+    public override int GetCreditLimit() => 50000;
+}
+
+public class PlatinumCard : CreditCard {
+    public override string GetCardType() => "Platinum";
+    public override int GetCreditLimit() => 100000;
+}
+
+// Creator
+public abstract class CreditCardFactory {
+    public abstract CreditCard CreateCard();
+}
+
+// Concrete Creators
+public class MoneyBackFactory : CreditCardFactory {
+    public override CreditCard CreateCard() => new MoneyBackCard();
+}
+
+public class PlatinumFactory : CreditCardFactory {
+    public override CreditCard CreateCard() => new PlatinumCard();
+}
+
+
+// Client Code
+CreditCardFactory factory = new PlatinumFactory();
+CreditCard card = factory.CreateCard();
+Console.WriteLine(card.GetCardType()); // Output: Platinum
+

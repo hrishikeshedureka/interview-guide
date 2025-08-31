@@ -1,0 +1,101 @@
+﻿****What Is Asynchronous Programming?
+		Asynchronous programming allows your application to perform tasks without blocking the main thread. This is especially useful for I/O-bound operations like:
+		Fetching data from a database
+		Calling a web API
+		Reading/writing files
+
+****async
+		Marks a method as asynchronous.
+		Must return Task, Task<T>, or void (only for event handlers).
+
+****await
+		Pauses the execution of the method until the awaited task completes.
+		Lets other operations run while waiting.
+
+	public async Task<string> GetDataAsync()		//marked async
+	{
+		HttpClient client = new HttpClient();
+		string result = await client.GetStringAsync("https://example.com");  //tells the compiler to wait for GetStringAsync to finish without blocking the thread.
+		return result;
+	}
+
+	public async Task<string> FetchDataAsync()
+	{
+		using HttpClient client = new HttpClient();
+		string response = await client.GetStringAsync("https://api.example.com/data");  //await lets the thread do other work while waiting for the response.
+		return response;
+	}
+
+	var result = GetDataAsync().Result;			 // ❌ Can cause deadlocks
+	var result = await GetDataAsync();			// ✅ Preferred way to get the result
+
+****What Is a Cancellation Token?	
+	A CancellationToken is a signal that tells an async operation:
+		“Hey, stop what you're doing—it's no longer needed.”
+	It’s part of a cooperative cancellation model, meaning the async method checks the token and decides when to stop.
+
+****Key Components
+	CancellationTokenSource			: Creates and controls the token.
+	CancellationToken				: Passed to async methods to monitor cancellation.
+	Cancel()						: Signals cancellation.
+	ThrowIfCancellationRequested()	: Throws an exception if cancellation is requested.
+
+	public async Task DoWorkAsync(CancellationToken token)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			token.ThrowIfCancellationRequested();			// Check for cancellation
+			Console.WriteLine($"Working... {i}");
+			await Task.Delay(500);							// Simulate work
+		}
+	}
+
+	var cts = new CancellationTokenSource();
+	var task = DoWorkAsync(cts.Token);
+
+	// Cancel after 2 seconds
+	cts.CancelAfter(2000);
+
+	try
+	{
+		await task;
+	}
+	catch (OperationCanceledException)
+	{
+		Console.WriteLine("Task was cancelled.");
+	}
+
+****Thread
+		Threading in C# is all about enabling your application to do "multiple things at once"
+		A thread is the smallest unit of execution in a program. Every C# application starts with a "main thread", and we can create additional threads to run tasks concurrently.
+
+		using System;
+		using System.Threading;
+
+		class Program
+		{
+			static void Main()
+			{
+				Thread t = new Thread(DoWork);
+				t.Start();
+
+				for (int i = 0; i < 5; i++)
+				{
+					Console.WriteLine("Main thread working...");
+					Thread.Sleep(500);
+				}
+			}
+
+			static void DoWork()
+			{
+				for (int i = 0; i < 5; i++)
+				{
+					Console.WriteLine("Worker thread working...");
+					Thread.Sleep(500);
+				}
+			}
+		}
+****Why Use Threading
+		Responsiveness: Keep your UI responsive by offloading long-running tasks to background threads.
+		Concurrency: Perform multiple operations simultaneously, improving performance for I/O-bound tasks.
+		Resource Utilization: Make better use of CPU resources by running tasks in parallel.

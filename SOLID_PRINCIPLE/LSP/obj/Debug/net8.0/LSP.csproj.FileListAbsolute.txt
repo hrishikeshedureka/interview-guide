@@ -1,0 +1,28 @@
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.exe
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.deps.json
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.runtimeconfig.json
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.pdb
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.AssemblyInfoInputs.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.AssemblyInfo.cs
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.csproj.CoreCompileInputs.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\refint\LSP.dll
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.pdb
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.genruntimeconfig.cache
+D:\PROJECT INTERVIEW\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\ref\LSP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.exe
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.deps.json
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.runtimeconfig.json
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\bin\Debug\net8.0\LSP.pdb
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.GeneratedMSBuildEditorConfig.editorconfig
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.AssemblyInfoInputs.cache
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.AssemblyInfo.cs
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.csproj.CoreCompileInputs.cache
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\refint\LSP.dll
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.pdb
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\LSP.genruntimeconfig.cache
+D:\HRISHI\Training\InterviewReadiness\SOLID_PRINCIPLE\LSP\obj\Debug\net8.0\ref\LSP.dll
